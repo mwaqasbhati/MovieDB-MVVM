@@ -1,0 +1,23 @@
+PODS:
+  - HCSStarRatingView (1.5)
+  - MBProgressHUD (0.9.2)
+  - RMPZoomTransitionAnimator (1.0.3)
+  - SDWebImage (4.3.2):
+    - SDWebImage/Core (= 4.3.2)
+  - SDWebImage/Core (4.3.2)
+
+DEPENDENCIES:
+  - HCSStarRatingView (~> 1.5)
+  - MBProgressHUD (~> 0.9.1)
+  - RMPZoomTransitionAnimator (~> 1.0.3)
+  - SDWebImage (~> 4.0)
+
+SPEC CHECKSUMS:
+  HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  RMPZoomTransitionAnimator: 33ded739d91052810c05c8e553663cc9ec79275b
+  SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
+
+PODFILE CHECKSUM: ea92127efcaf366bdc76e94b46ff83468751a51b
+
+COCOAPODS: 1.4.0
