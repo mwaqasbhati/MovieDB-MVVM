@@ -14,6 +14,4 @@ class FilterViewModel {
     var minYear = Dynamic<String>("")
     var maxYear = Dynamic<String>("")
     
-    
-    
 }

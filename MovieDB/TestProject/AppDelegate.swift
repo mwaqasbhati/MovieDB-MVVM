@@ -13,14 +13,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        getAppConfigurations()
+    var rootVC: UINavigationController {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MovieListViewController") as! MovieListViewController
         viewController.movieListViewModel = MovieListViewModel(apiService: MovieAPI())
-        self.window?.rootViewController = viewController
+        let rootVC = UINavigationController(rootViewController: viewController)
+        rootVC.isNavigationBarHidden = true
+        return rootVC
+    }
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        getAppConfigurations()        
+        self.window?.rootViewController = rootVC
         self.window?.makeKeyAndVisible()
         return true
     }

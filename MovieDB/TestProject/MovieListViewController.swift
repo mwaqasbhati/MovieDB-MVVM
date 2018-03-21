@@ -75,7 +75,7 @@ extension MovieListViewController {
     func getStoresForPage(page: Int) {
         self.gotData = false
         HUD.show(view: view)
-        movieListViewModel?.initFetch()
+        movieListViewModel?.initFetch(url: mURL)
     }
     
 }
@@ -85,7 +85,7 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
     // MARK: - UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movieListViewModel?.movieContainer?.results.count ?? 0
+        return movieListViewModel?.getTotalMovies() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -131,7 +131,7 @@ extension MovieListViewController: FilterViewDelegate {
     func applyFilter(minYear: Int, maxYear: Int) {
          page = 1
          isFilterApplied = true
-         self.movieListViewModel?.movieContainer?.results.removeAll()
+         self.movieListViewModel?.resetMovies()
          self.minYear = String(minYear)
          self.maxYear = String(maxYear)
          getStoresForPage(page: page)
@@ -139,7 +139,7 @@ extension MovieListViewController: FilterViewDelegate {
     func resetFilter() {
          page = 1
          isFilterApplied = false
-        self.movieListViewModel?.movieContainer?.results.removeAll()
+         self.movieListViewModel?.resetMovies()
          getStoresForPage(page: page)
     }
 

@@ -10,9 +10,8 @@ import Foundation
 
 class MovieListViewModel {
     
-    var movieContainer: MovieContainer?
+    //MARK: Instance
     private var dataAccessManager: MovieAPI?
-    
     var movieSuccess: (() -> ())?
     var movieError: ((NetworkError?) -> ())?
     
@@ -26,18 +25,29 @@ class MovieListViewModel {
             self.movieError?(error)
         }
     }
-    init(movieContainer: MovieContainer?) {
-        self.movieContainer = movieContainer
+    
+    //MARK: Initializers
+    
+    init(cellVM: [MovieViewModel]) {
+        self.cellViewModels = cellVM
     }
-    init( apiService: MovieAPI?) {
+    required init( apiService: MovieAPI?) {
         self.dataAccessManager = apiService
     }
     
+    //MARK: Helper Methds
+    
+    func getTotalMovies() -> Int {
+        return cellViewModels.count
+    }
+    func resetMovies() {
+        return cellViewModels.removeAll()
+    }
     func getCellViewModel( at indexPath: IndexPath ) -> MovieViewModel {
         return cellViewModels[indexPath.row]
     }
-    func initFetch() {
-        dataAccessManager?.getMoviesList(url: Constant.MOVIE_URL.path, completion: { [weak self] (movieContainer, error) in
+    func initFetch(url: String) {
+        dataAccessManager?.getMoviesList(url: url, completion: { [weak self] (movieContainer, error) in
             self?.processFetchedData(movieContainer: (movieContainer as? MovieContainer)!, error: error)
         })
         
@@ -47,12 +57,12 @@ class MovieListViewModel {
             self.error = error!
             return
         }
-        self.movieContainer = movieContainer
         var vms = [MovieViewModel]()
-        for movie in self.movieContainer?.results ?? [Movie]() {
+        for movie in movieContainer.results {
             vms.append(MovieViewModel(id: movie.id, imageURL: movie.poster_path, title: movie.title))
         }
-        self.cellViewModels = vms
+        let total = self.cellViewModels + vms
+        self.cellViewModels = total
     }
     
 }
@@ -61,5 +71,4 @@ struct MovieViewModel {
     var id: Int
     var imageURL: String
     var title: String
-    
 }

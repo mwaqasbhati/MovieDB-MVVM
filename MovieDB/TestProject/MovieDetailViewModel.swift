@@ -11,18 +11,15 @@ import UIKit
 
 class MovieDetailViewModel {
     
-    var movieDetail: MovieDetail?
-    
+    //MARK: Instance
     var movieId: Int?
     var movieImage: UIImage?
-
     var releaseDate: String?
     var originalTitle: String?
     var tagLine: String?
     var voteCount: Int?
     var overView: String?
     var voteAverage: Double?
-    
     private var dataAccessManager: MovieDetailAPI?
     
     var movieSuccess: (() -> ())?
@@ -38,9 +35,9 @@ class MovieDetailViewModel {
             self.movieError?(error)
         }
     }
-    func getMovieVM() -> MovieDetailViewModel? {
-        return movieViewModel
-    }
+    
+    //MARK: Initializers
+
     init(releaseDate: String, originalTitle: String, tagLine: String, voteCount: Int, overView: String, voteAverage: Double, movieImage: UIImage, movieID: Int) {
         self.releaseDate = releaseDate
         self.originalTitle = originalTitle
@@ -56,13 +53,18 @@ class MovieDetailViewModel {
         self.movieImage = movieImage
         self.dataAccessManager = apiService
     }
-    init(movieDetail: MovieDetail?) {
-        self.movieDetail = movieDetail
+    init(movieDetailVM: MovieDetailViewModel) {
+        self.movieViewModel = movieDetailVM
     }
-    init( apiService: MovieDetailAPI) {
+    required init( apiService: MovieDetailAPI) {
         self.dataAccessManager = apiService
     }
     
+    //MARK: Helper Methds
+
+    func getMovieVM() -> MovieDetailViewModel? {
+        return movieViewModel
+    }
     func initFetch(url: String) {
         dataAccessManager?.getMovieDetail(url: url, completion: { [weak self] (movieDetail, error) in
             self?.processFetchedData(movieDetail: (movieDetail as? MovieDetail)!, error: error)
@@ -73,7 +75,7 @@ class MovieDetailViewModel {
             self.error = error!
             return
         }
-        self.movieDetail = movieDetail
+      //  self.movieDetail = movieDetail
         self.movieViewModel = MovieDetailViewModel(releaseDate: movieDetail.release_date, originalTitle: movieDetail.original_title, tagLine: movieDetail.tagline, voteCount: movieDetail.vote_count, overView: movieDetail.overview, voteAverage: movieDetail.vote_average, movieImage: self.movieImage!, movieID: self.movieId!)
     }
     

@@ -93,7 +93,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6SU-E5-Rvq" kind="show" identifier="goToFilter" id="iAB-5a-rGi"/>
+                                    <segue destination="6SU-E5-Rvq" kind="push" identifier="goToFilter" id="iAB-5a-rGi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -168,7 +168,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="resultBtnPressed:" destination="6SU-E5-Rvq" eventType="touchUpInside" id="jF7-jC-Zi8"/>
+                                                    <action selector="resultBtnPressed:" destination="6SU-E5-Rvq" eventType="touchUpInside" id="M5C-EV-EtS"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -179,14 +179,14 @@
                                 <rect key="frame" x="16" y="20" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <action selector="cancelBtnPressed:" destination="6SU-E5-Rvq" eventType="touchUpInside" id="Omu-5n-eGf"/>
+                                    <action selector="cancelBtnPressed:" destination="6SU-E5-Rvq" eventType="touchUpInside" id="noK-Sf-VMu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnP-p6-bgg">
                                 <rect key="frame" x="320" y="20" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
-                                    <action selector="resetBtnPressed:" destination="6SU-E5-Rvq" eventType="touchUpInside" id="KOp-Gx-aCr"/>
+                                    <action selector="resetBtnPressed:" destination="6SU-E5-Rvq" eventType="touchUpInside" id="40b-hc-hwC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -203,6 +203,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k65-YN-8w6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="uVh-zF-3Ys"/>
                     <connections>
                         <outlet property="textFieldMaxYear" destination="kSd-GB-YNE" id="CbL-Qw-LEf"/>
                         <outlet property="textFieldMinYear" destination="H6b-jn-XaG" id="SsL-Qy-FUw"/>
