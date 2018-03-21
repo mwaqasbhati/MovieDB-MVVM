@@ -156,6 +156,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6223119A20623CEF00848D57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				94CC113C1F2D138A009EDF2F /* MovieTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6223119B20623D4700848D57 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				94CC112B1F2D09B9009EDF2F /* NetworkManager */,
+				FAF724A520053E06003CE25E /* Helper */,
+				94CC11321F2D0A70009EDF2F /* Extension */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		62FF288D205E895200E2536A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,15 +209,11 @@
 		94CC10FC1F2D059A009EDF2F /* TestProject */ = {
 			isa = PBXGroup;
 			children = (
-				62FF288D205E895200E2536A /* ViewModel */,
-				FA7934D9204F312A00D65B58 /* StoryBoard */,
-				FAF724A6200557FB003CE25E /* Controller */,
-				FAF724A520053E06003CE25E /* Helper */,
 				94CC113B1F2D137A009EDF2F /* View */,
 				94CC11381F2D0ED0009EDF2F /* Model */,
-				94CC11351F2D0AE7009EDF2F /* OtherSources */,
-				94CC11321F2D0A70009EDF2F /* Extension */,
-				94CC112B1F2D09B9009EDF2F /* NetworkManager */,
+				62FF288D205E895200E2536A /* ViewModel */,
+				FA7934D9204F312A00D65B58 /* StoryBoard */,
+				6223119B20623D4700848D57 /* Utilities */,
 				94CC10FD1F2D059B009EDF2F /* AppDelegate.swift */,
 				94CC11041F2D059B009EDF2F /* Assets.xcassets */,
 				94CC11061F2D059B009EDF2F /* LaunchScreen.storyboard */,
@@ -247,14 +261,6 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
-		94CC11351F2D0AE7009EDF2F /* OtherSources */ = {
-			isa = PBXGroup;
-			children = (
-				94CC11361F2D0AFD009EDF2F /* Reachability.swift */,
-			);
-			name = OtherSources;
-			sourceTree = "<group>";
-		};
 		94CC11381F2D0ED0009EDF2F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,7 +274,8 @@
 		94CC113B1F2D137A009EDF2F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				94CC113C1F2D138A009EDF2F /* MovieTableViewCell.swift */,
+				FAF724A6200557FB003CE25E /* Controllers */,
+				6223119A20623CEF00848D57 /* Views */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -284,6 +291,7 @@
 		FAF724A520053E06003CE25E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				94CC11361F2D0AFD009EDF2F /* Reachability.swift */,
 				FAAB98F9204DD0C8000BADD3 /* MovieItemsGridLayout.swift */,
 				FAF724A320053C83003CE25E /* Constants.swift */,
 				6265CD83204EAF2300A4D12F /* HUD.swift */,
@@ -293,14 +301,14 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
-		FAF724A6200557FB003CE25E /* Controller */ = {
+		FAF724A6200557FB003CE25E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				FAF724A720055814003CE25E /* MovieDetailViewController.swift */,
 				94CC10FF1F2D059B009EDF2F /* MovieListViewController.swift */,
 				6265CD81204E6DEF00A4D12F /* FiltersViewController.swift */,
 			);
-			name = Controller;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
