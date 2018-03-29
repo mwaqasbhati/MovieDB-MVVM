@@ -5,15 +5,15 @@ This application includes MVVM implementation of MovieDB which is an online movi
 
 It includes 3 views
 
-  1- Movie Listing 
+  ## 1- Movie Listing 
   
   https://github.com/mwaqasbhati/MovieDB-MVVM/blob/master/MovieDB/Screenshots/MovieListing.png
     
-  2- Movie Detail
+  ## 2- Movie Detail
   
   https://github.com/mwaqasbhati/MovieDB-MVVM/blob/master/MovieDB/Screenshots/Movie.png
   
-  3- Filters (minimum year and max year)
+  ## 3- Filters (minimum year and max year)
   
   https://github.com/mwaqasbhati/MovieDB-MVVM/blob/master/MovieDB/Screenshots/Filter.png
   
